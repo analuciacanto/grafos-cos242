@@ -1,0 +1,1 @@
+Número de vértices: Número de arestas: Grau mínimo: Grau máximo: Mediana do grau: Mediana do grau: 

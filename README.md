@@ -2,8 +2,9 @@
 
 ## Parte 1
 
-- [ ] Receber um arquivo txt
-- [ ] Representação em matriz de adjacência
+- [x] Receber um arquivo txt
+- [ ] Saída no formato dado
+- [x] Representação em matriz de adjacência
 - [ ] Representação em lista de adjacência
 - [ ] Representação em vetor de adjacência
 - [ ] Busca em largura
