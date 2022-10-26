@@ -7,9 +7,9 @@ public class Main {
 				+ ".txt";
 		Grafo grafo = new Grafo();
 		grafo.getNumVertices(file);
+		
 
 		ListaAdjacencia listaAdjacencia = new ListaAdjacencia();
-		//BFS
 
 		listaAdjacencia.getListaAdjacencia(grafo, file);
 		listaAdjacencia.getComponentesConexasBFS(3, grafo);
