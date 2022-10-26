@@ -1,7 +1,7 @@
 /**
  * 
  */
-package grafos;
+package trabalho1;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

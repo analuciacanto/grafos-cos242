@@ -1,4 +1,4 @@
-package grafos;
+package trabalho1;
 
 public class NoArvore {
 	
