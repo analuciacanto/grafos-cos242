@@ -3,6 +3,7 @@ public class No {
 	
 	private Integer vertice;
 	private No proximoNo;
+	private double peso;
 	boolean explorado;
 	
 	public No(Integer vertice) {
@@ -38,6 +39,14 @@ public class No {
 		this.proximoNo = proximoNo;
 	}
 	
+	public double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+
 	@Override
 	public String toString() {
 		return vertice.toString();				

@@ -14,5 +14,6 @@ public class Main {
 		listaAdjacencia.getListaAdjacencia(grafo, file);
 		listaAdjacencia.getComponentesConexasBFS(3, grafo);
 	}	
+	
 }
 

@@ -24,6 +24,7 @@ public class Grafo {
 	private int[][] matrizAdjacencia;	
 	private Stack<No> ordemExploradosDFS = new Stack<No>();
 	private Queue<No> ordemExploradosBFS = new LinkedList<No>();
+	
 		
 	public void getNumVertices(String file) {
 	       int vertices = 0;

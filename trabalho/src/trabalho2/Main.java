@@ -1,7 +1,21 @@
 package trabalho2;
 
+import trabalho1.Grafo;
+import trabalho1.ListaAdjacencia;
 public class Main {
 	public static void main(String[] args) throws InterruptedException {
-		System.out.println("Lula 13! Ops, Trabalho 2 :)");		
-	}		
+		
+		//Criando a lista de adjacencia
+		
+		String file = "C:/Users/analu/OneDrive/Documentos/UFRJ/grafos-cos242/trabalho/src/trabalho2/example"
+				+ ".txt";
+		Grafo grafo = new Grafo();
+		grafo.getNumVertices(file);
+		
+
+		ListaAdjacencia listaAdjacencia = new ListaAdjacencia();
+		listaAdjacencia.getListaAdjacencia(grafo, file);
+		listaAdjacencia.imprimirListaAdjacencia(grafo);
+	}	
 }
+

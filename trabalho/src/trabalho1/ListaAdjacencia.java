@@ -202,8 +202,9 @@ public void getComponentesConexasBFS(int verticeInicial , Grafo grafo) {
 	   	return isDescoberto;
 		} 	
 	
-		public void addAresta(int de, int para, Grafo grafo) {
-			No novo = new No(para);		
+		public void addAresta(int de, int para, double peso, Grafo grafo) {
+			No novo = new No(para);
+			novo.setPeso(peso);
 			No anterior = null;
 			No inicio = grafo.getListaAdjacencia()[de -1];
 			No proximo = grafo.getListaAdjacencia()[de -1].getProximoNo();
@@ -255,8 +256,15 @@ public void getComponentesConexasBFS(int verticeInicial , Grafo grafo) {
 			            	if (j>0) {
 			            		
 			    	            String[] vertices = line.split(" ");
-			    	            addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), grafo);	
-			    	            addAresta(Integer.parseInt(vertices[1]), Integer.parseInt(vertices[0]), grafo);	
+			    	            
+			    	             if (vertices.length == 3){
+			    	            	  addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), Double.parseDouble(vertices[2]), grafo);	
+					    	          addAresta(Integer.parseInt(vertices[1]), Integer.parseInt(vertices[0]),Double.parseDouble(vertices[2]), grafo);	
+			    	             }	
+			    	             else {
+			    	            	  addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), 0,grafo);	
+					    	          addAresta(Integer.parseInt(vertices[1]), Integer.parseInt(vertices[0]), 0, grafo);	
+			    	             }
 			            	}
 			            	j++;									
 						}
@@ -274,7 +282,7 @@ public void getComponentesConexasBFS(int verticeInicial , Grafo grafo) {
 
 			        while (inicio != null)
 			        {
-			        	lista = lista + inicio.getVertice().toString() + "->" ;   
+			        	lista = lista + "(" +  inicio.getVertice().toString() + "," +  inicio.getPeso() + ")" +  "-> " ;   
 			            inicio = inicio.getProximoNo();
 			        }
 		            System.out.println(lista);
