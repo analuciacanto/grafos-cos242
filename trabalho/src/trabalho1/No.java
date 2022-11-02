@@ -3,7 +3,7 @@ public class No {
 	
 	private Integer vertice;
 	private No proximoNo;
-	private double peso;
+	private float peso;
 	boolean explorado;
 	
 	public No(Integer vertice) {
@@ -39,11 +39,11 @@ public class No {
 		this.proximoNo = proximoNo;
 	}
 	
-	public double getPeso() {
+	public float getPeso() {
 		return peso;
 	}
 
-	public void setPeso(double peso) {
+	public void setPeso(float peso) {
 		this.peso = peso;
 	}
 

@@ -10,12 +10,12 @@ import trabalho1.No;
 public class Distancia {
 	
 	public void dijkstra(Grafo grafo, int s) {
-		double[] distancia = new double[grafo.getMaxVertices()]; //Vetor inicial de tamanho n
+		float[] distancia = new float[grafo.getMaxVertices()]; //Vetor inicial de tamanho n
 		ArrayList<Integer> naoExplorados = new ArrayList<Integer>();   //V-S 
 
 		for(int i=0; i<=grafo.getMaxVertices() -1; i++)
 		{
-			distancia[i] = Double.POSITIVE_INFINITY;  // Preenchendo com inifinito
+			distancia[i] = Float.POSITIVE_INFINITY;  // Preenchendo com inifinito
 			naoExplorados.add(i+1);
 		}
 		
@@ -47,8 +47,23 @@ public class Distancia {
 	        System.out.println("Distancia: " + stringArr);
 	}
 	
+	public void dijkstraHeap(Grafo grafo, int s) {
+		Heap heap = new Heap();		
+		ArrayList<Integer> naoExplorados = new ArrayList<Integer>();   //V-S 
+
+		for(int i=0; i<=grafo.getMaxVertices() -1; i++)
+		{
+			heap.addElement(Float.POSITIVE_INFINITY); // Preenchendo com inifinito
+			naoExplorados.add(i+1);
+		}
+		
 	
-	public static int retornaMenorValor(double[] vetor, ArrayList<Integer> naoExplorados ) {
+	}
+	
+	
+	
+	
+	public static int retornaMenorValor(float[] vetor, ArrayList<Integer> naoExplorados ) {
 	    double aux;
         int indice = naoExplorados.get(0) - 1;
 	    if(vetor != null && vetor.length > 0) {   

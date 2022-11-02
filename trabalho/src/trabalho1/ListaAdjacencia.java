@@ -202,7 +202,7 @@ public void getComponentesConexasBFS(int verticeInicial , Grafo grafo) {
 	   	return isDescoberto;
 		} 	
 	
-		public void addAresta(int de, int para, double peso, Grafo grafo) {
+		public void addAresta(int de, int para, float peso, Grafo grafo) {
 			No novo = new No(para);
 			novo.setPeso(peso);
 			No anterior = null;
@@ -258,8 +258,8 @@ public void getComponentesConexasBFS(int verticeInicial , Grafo grafo) {
 			    	            String[] vertices = line.split(" ");
 			    	            
 			    	             if (vertices.length == 3){
-			    	            	  addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), Double.parseDouble(vertices[2]), grafo);	
-					    	          addAresta(Integer.parseInt(vertices[1]), Integer.parseInt(vertices[0]),Double.parseDouble(vertices[2]), grafo);	
+			    	            	  addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), Float.parseFloat(vertices[2]), grafo);	
+					    	          addAresta(Integer.parseInt(vertices[1]), Integer.parseInt(vertices[0]), Float.parseFloat(vertices[2]), grafo);	
 			    	             }	
 			    	             else {
 			    	            	  addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), 0,grafo);	
