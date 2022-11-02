@@ -16,6 +16,9 @@ public class Main {
 		ListaAdjacencia listaAdjacencia = new ListaAdjacencia();
 		listaAdjacencia.getListaAdjacencia(grafo, file);
 		listaAdjacencia.imprimirListaAdjacencia(grafo);
+		
+		Distancia distancia = new Distancia();
+		distancia.dijkstra(grafo,1);
 	}	
 }
 
