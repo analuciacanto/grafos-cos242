@@ -4,6 +4,7 @@ public class No {
 	private Integer vertice;
 	private No proximoNo;
 	private float peso;
+	private float distancia;
 	boolean explorado;
 	
 	public No(Integer vertice) {
@@ -47,10 +48,18 @@ public class No {
 		this.peso = peso;
 	}
 
-	@Override
+	public float getDistancia() {
+		return distancia;
+	}
+
+	public void setDistancia(float distancia) {
+		this.distancia = distancia;
+	}
+
+	/*@Override
 	public String toString() {
 		return vertice.toString();				
 	}
-
+*/
 	
 }
