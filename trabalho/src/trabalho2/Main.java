@@ -5,14 +5,15 @@ import trabalho1.ListaAdjacencia;
 public class Main {
 	public static void main(String[] args) throws InterruptedException {
 
-		String file = "C:/Users/analu/OneDrive/Documentos/UFRJ/grafos-cos242/trabalho/src/trabalho2/data/grafo_W_1_1"
+		String file = "C:/Users/analu/OneDrive/Documentos/UFRJ/grafos-cos242/trabalho/src/trabalho2/data/example"
 				+ ".txt";
 	
 		Grafo grafo = new Grafo();
 		grafo.getNumVertices(file);
 					
 		ListaAdjacencia listaAdjacencia = new ListaAdjacencia();
-		listaAdjacencia.getListaAdjacencia(grafo, file);
+		listaAdjacencia.getListaAdjacencia(grafo, file, false);
+		listaAdjacencia.imprimirListaAdjacencia(grafo);
 		
 		
 		System.out.println("Lista de Adjacência");

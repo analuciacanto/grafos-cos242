@@ -160,7 +160,7 @@ public void getComponentesConexasBFS(int verticeInicial , Grafo grafo) {
 
 		
 		while(!descobertos.isEmpty()) {				
-		   // System.out.println("Descobertos:" + descobertos + " -- " +  "Explorados:" + explorados);
+		   // System.out.println("Descobertos:" + descobertos + " -- " +  "ExploFrados:" + explorados);
 			   noInicio =  grafo.getListaAdjacencia()[noInicio.getVertice() - 1];
 			   
 			   if (!isDescoberto[noInicio.getVertice() - 1]) {
@@ -202,9 +202,10 @@ public void getComponentesConexasBFS(int verticeInicial , Grafo grafo) {
 	   	return isDescoberto;
 		} 	
 	
-		public void addAresta(int de, int para, float peso, Grafo grafo) {
+		public void addAresta(int de, int para, float peso, float capacity, Grafo grafo) {
 			No novo = new No(para);
 			novo.setPeso(peso);
+			novo.setCapacity(capacity);
 			No anterior = null;
 			No inicio = grafo.getListaAdjacencia()[de -1];
 			No proximo = grafo.getListaAdjacencia()[de -1].getProximoNo();
@@ -233,7 +234,7 @@ public void getComponentesConexasBFS(int verticeInicial , Grafo grafo) {
 		
 		}
 	
-		public void getListaAdjacencia(Grafo grafo, String file) throws InterruptedException {
+		public void getListaAdjacencia(Grafo grafo, String file, boolean isDirecionado) throws InterruptedException {
 			int maxVertices = grafo.getMaxVertices();
 			
 			@SuppressWarnings("unchecked")
@@ -256,14 +257,26 @@ public void getComponentesConexasBFS(int verticeInicial , Grafo grafo) {
 			            	if (j>0) {
 			            		
 			    	            String[] vertices = line.split(" ");
-			    	            
 			    	             if (vertices.length == 3){
-			    	            	  addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), Float.parseFloat(vertices[2]), grafo);	
-					    	          addAresta(Integer.parseInt(vertices[1]), Integer.parseInt(vertices[0]), Float.parseFloat(vertices[2]), grafo);	
+				    	             addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), Float.parseFloat(vertices[2]),Float.parseFloat(vertices[2]), grafo);
+			    	            	 if (!isDirecionado){
+
+						    	          addAresta(Integer.parseInt(vertices[1]), Integer.parseInt(vertices[0]), Float.parseFloat(vertices[2]),Float.parseFloat(vertices[2]), grafo);	
+			    	            	 }
+			    	             }	
+			    	             else if (vertices.length == 4){
+					    	          addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), Float.parseFloat(vertices[2]), Float.parseFloat(vertices[3]), grafo);	
+
+			    	            	 if (!isDirecionado){
+						    	          addAresta(Integer.parseInt(vertices[1]), Integer.parseInt(vertices[0]), Float.parseFloat(vertices[2]), Float.parseFloat(vertices[3]), grafo);	
+			    	            	 }
 			    	             }	
 			    	             else {
-			    	            	  addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), 0,grafo);	
-					    	          addAresta(Integer.parseInt(vertices[1]), Integer.parseInt(vertices[0]), 0, grafo);	
+			    	            	  addAresta(Integer.parseInt(vertices[0]), Integer.parseInt(vertices[1]), 0, 0, grafo);	
+				    	            	 if (!isDirecionado){
+							    	          addAresta(Integer.parseInt(vertices[1]), Integer.parseInt(vertices[0]), 0, 0, grafo);	
+				    	            	 }
+
 			    	             }
 			            	}
 			            	j++;									
@@ -282,8 +295,10 @@ public void getComponentesConexasBFS(int verticeInicial , Grafo grafo) {
 
 			        while (inicio != null)
 			        {
-			        	lista = lista + "(" +  inicio.getVertice().toString() + "," +  inicio.getPeso() + ")" +  "-> " ;   
-			            inicio = inicio.getProximoNo();
+			        //	lista = lista + "(" +  inicio.getVertice().toString() + "," +  inicio.getPeso()  + "," +  inicio.getCapacity() + ")" +  "-> " ;   
+				       lista = lista + "(" +  inicio.getVertice().toString()  + "," +  inicio.getCapacity() + ")" +  "-> " ;   
+
+			        	inicio = inicio.getProximoNo();
 			        }
 		            System.out.println(lista);
 			    }

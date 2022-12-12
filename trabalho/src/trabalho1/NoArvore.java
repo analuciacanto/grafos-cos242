@@ -14,7 +14,7 @@ public class NoArvore {
 		this.pai = pai;
 	}
 	
-	NoArvore(int vertice)
+	public NoArvore(int vertice)
     {
         this.vertice = vertice;
         this.pai = null;

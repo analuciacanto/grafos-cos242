@@ -11,7 +11,7 @@ public class Main {
 
 		ListaAdjacencia listaAdjacencia = new ListaAdjacencia();
 
-		listaAdjacencia.getListaAdjacencia(grafo, file);
+		listaAdjacencia.getListaAdjacencia(grafo, file, false);
 		listaAdjacencia.getComponentesConexasBFS(5, grafo);
 	}	
 	

@@ -4,6 +4,8 @@ public class No {
 	private Integer vertice;
 	private No proximoNo;
 	private float peso;
+	private float capacity;
+	private float residuo;	
 	private float distancia;
 	boolean explorado;
 	
@@ -11,6 +13,7 @@ public class No {
 	this.vertice = vertice;
 	this.proximoNo = null;
 	this.explorado = false;
+	this.setResiduo(0);
 	}
 	
 	public final boolean isExplorado() {
@@ -55,6 +58,23 @@ public class No {
 	public void setDistancia(float distancia) {
 		this.distancia = distancia;
 	}
+	
+	public float getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(float capacity) {
+		this.capacity = capacity;
+	}
+
+	public float getResiduo() {
+		return residuo;
+	}
+
+	public void setResiduo(float residuo) {
+		this.residuo = residuo;
+	}
+
 
 	/*@Override
 	public String toString() {
