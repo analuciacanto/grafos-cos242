@@ -20,6 +20,12 @@ Repositório destinando ao desenvolvimento de uma biblioteca de grafos para a di
 - Cálculo do peso de uma MST 
 - Cálculo de caminhos mínimos por Dijkstra
 
+
+### Package 3
+- Representação de Grafos direcionados
+- BFS para encontrar camínhos mínimos no algoritmo de Ford Fulkerson
+- Algoritmo de FOrd Fulkerson para cálculo de caminhos mínimos
+
 ## Para desenvolvimento e execução 
 
 - Instalar Java JDK 18
